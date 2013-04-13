@@ -12,7 +12,7 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", "3072"]
   config.vm.customize ["modifyvm", :id, "--cpus", "2"]
   
-  config.vm.boot_mode = :gui
+  #config.vm.boot_mode = :gui
 
   config.vm.provision :puppet,
     :manifests_path => 'puppet/manifests',
