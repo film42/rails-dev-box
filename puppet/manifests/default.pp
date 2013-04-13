@@ -144,9 +144,9 @@ exec { "${as_vagrant} 'gem install bundler --no-rdoc --no-ri'":
 # --- Others ------------------------------------------------------------------
 
 package { 'htop':
-  ensure => installed
+  ensure => installed
 }
 
 package { 'iftop':
-  ensure => installed
+  ensure => installed
 }
