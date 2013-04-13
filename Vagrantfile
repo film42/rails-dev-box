@@ -3,9 +3,11 @@ Vagrant::Config.run do |config|
   config.vm.box_url   = 'http://files.vagrantup.com/precise64.box'
   config.vm.host_name = 'rails-dev-box'
   
+  config.vm.network :bridged
   config.vm.share_folder "Development", "~/Development", "/Users/film42/Dropbox/Development", :nfs => true
 
   config.vm.forward_port 3000, 3000
+  config.vm.forward_port 8080, 8080
   
   config.vm.customize ["modifyvm", :id, "--memory", "3072"]
   config.vm.customize ["modifyvm", :id, "--cpus", "2"]
