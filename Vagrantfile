@@ -8,7 +8,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port 3000, 3000
   
   config.vm.customize ["modifyvm", :id, "--memory", "3072"]
-  config.vm.customize ["modifyvm", :id, "--cpus", "2"]
+  config.vm.customize ["modifyvm", :id, "--cpus", "2"]
 
   config.vm.provision :puppet,
     :manifests_path => 'puppet/manifests',
