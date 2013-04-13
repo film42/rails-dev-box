@@ -120,7 +120,7 @@ package { 'nodejs':
 # --- Ruby ---------------------------------------------------------------------
 
 exec { 'install_rvm':
-  command => "${as_vagrant} 'curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3'",
+  command => "${as_vagrant} 'curl -L https://get.rvm.io | bash -s stable'",
   creates => "${home}/.rvm",
   require => Package['curl']
 }
@@ -131,9 +131,9 @@ exec { 'install_ruby':
   # The rvm executable is more suitable for automated installs.
   #
   # Thanks to @mpapis for this tip.
-  # command => "${as_vagrant} '${home}/.rvm/bin/rvm install 2.0.0 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 2.0.0'",
-  # creates => "${home}/.rvm/bin/ruby",
-  # require => Exec['install_rvm']
+  command => "${as_vagrant} '${home}/.rvm/bin/rvm install 1.9.3 --latest-binary --autolibs=enabled && rvm --fuzzy alias create default 1.9.3'",
+  creates => "${home}/.rvm/bin/ruby",
+  require => Exec['install_rvm']
 }
 
 exec { "${as_vagrant} 'gem install bundler --no-rdoc --no-ri'":
