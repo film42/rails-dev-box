@@ -4,6 +4,7 @@ Vagrant::Config.run do |config|
   config.vm.host_name = 'rails-dev-box'
   
   config.vm.network :bridged
+  config.vm.network :hostonly, "33.33.33.10"
   config.vm.share_folder "Development", "~/Development", "/Users/film42/Dropbox/Development", :nfs => true
 
   config.vm.forward_port 3000, 3000
