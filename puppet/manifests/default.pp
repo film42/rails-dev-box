@@ -139,3 +139,13 @@ exec { "${as_vagrant} 'gem install bundler --no-rdoc --no-ri'":
   creates => "${home}/.rvm/bin/bundle",
   require => Exec['install_ruby']
 }
+
+# --- Others ------------------------------------------------------------------
+
+package { 'htop':
+  ensure => installed
+}
+
+package { 'iftop':
+  ensure => installed
+}
